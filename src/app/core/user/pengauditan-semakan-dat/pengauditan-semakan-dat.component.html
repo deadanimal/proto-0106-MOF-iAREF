@@ -1,0 +1,109 @@
+
+<div class="header container-header">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">{{"Pengurusan " +managementType}}</h6>
+
+          <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class=" breadcrumb-item">
+                <a href="javascript:void(0)"> <i class="fas fa-file text-white"> </i> </a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)" class="text-white"> {{"Semakan "  + managementType}}</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="container-fluid mt--8">
+
+  <div *ngIf="main" class="card">
+    <!-- Card body -->
+    <div class="card-body">
+      <form style="padding: 20px 20px 20px 30px;">
+
+        <div class="form-group">
+          <div class="col-6">
+            <label class="form-control-label">Pilih Jenis Semakan</label>
+            <select class="form-control" [(ngModel)]="managementType" [ngModelOptions]="{standalone: true}">
+              <option value="Pengauditan">Pengauditan</option>
+              <option value="Naziran">Naziran</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="form-control-label">ID pengguna</label>
+              <input type="text" class="form-control" placeholder="Masukkan ID anda">
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row mt-6">
+          <div class="col-md-12 clearfix">
+            <button class="btn btn-primary float-right" type="button" (click)="showTable()">
+              Next
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="table" class="card mt--2">
+    <!-- Card body -->
+    <div class="row">
+      <div class="col-xl-12">
+        <div class=" table-responsive mt-2">
+          <table class=" table align-items-center table-flush">
+            <thead class=" thead-light">
+              <tr>
+                <th class=" sort" scope="col"><b>Nama Dokumen</b></th>
+
+                <th class=" sort" scope="col"><b>Fail</b></th>
+
+                <th class=" sort" scope="col"><b>Tarikh Serahan</b></th>
+
+                <th class = "sort" scope="col">Komen</th>
+
+                <th></th>
+
+                <th scope="col">Action</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of rows">
+                <td scope="row">{{row.name}}</td>
+                <td><a href="javascript:void(0)">Dokumen12315.pdf</a></td>
+                <td>{{row.date}}</td>
+                <td colspan="2"><textarea class=" form-control" placeholder="Komen di sini" rows="4">
+                  Berbeza dari pendapat umum yang popular, Lorem Ipsum bukan karya text secara rambang. Ia menpunyai asal usul dari secebis sastera klasik Latin dari kurun 45 TM (Tahum Masihi) , menjadikan ia karya berusia lebih 2000 tahun.
+                </textarea></td>
+                <td><a href="javascript:void(0)">
+                    <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                  </a>&nbsp;&nbsp;
+                  <a href="javascript:void(0)" (click)="deleteData(row)">
+                    <span><i class="fa fa-trash text-red" aria-hidden="true"></i></span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>

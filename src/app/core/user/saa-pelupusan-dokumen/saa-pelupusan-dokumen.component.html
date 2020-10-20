@@ -1,0 +1,183 @@
+<div class="header container-header">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">Self Assessment Audit (SAA)</h6>
+
+          <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class=" breadcrumb-item">
+                <a href="javascript:void(0)"> <i class="fas fa-file text-white"> </i> </a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)" class="text-white"> Pelupusan Dokumen</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="container-fluid mt--8">
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="mb-0">
+        Prosedur Pelupusan Dokumen Kewangan
+      </h3>
+    </div>
+    <!-- Card body -->
+    <div class="card-body">
+     <p> 1. Semak rekod tidak aktif atau tamat tindakan yang ada di Jabatan. <br>
+
+      2. Asingkan rekod mengikut jenis iaitu rekod kewangan dan bukan kewangan. <br>
+
+      3. Asingkan rekod kewangan mengikut tahun akhir penyelesaian segala urusan. <br>
+
+      4. Semak tempoh simpanan seperti yang telah ditetapkan di Lampiran M - Arahan Perbendaharaan 150, Jadual Pelupusan 
+      Rekod Kewangan dan Perakaunan dan Jadual Pelupusan Rekod Jabatan (jika ada). <br>
+
+      5. Menyediakan senarai rekod kewangan dan perakaunan yang hendak dimusnahkan (Borang Arkib 4/2008 - Borang
+      Permohonan Bagi Pemusnahan Rekod Kewangan dan Perakaunan). <br>
+
+      6. Hantar permohonan ke Arkib Negara Malaysia dan Jabatan Audit Negara untuk kebenaran / sokongan. <br>
+
+      7. Dapatkan sokongan lain daripada Suruhanjaya Pencegahan Rasuah Malaysia (SPRM) dan Audit Dalam Kementerian (jika
+      perlu). <br>
+
+      8. Terima surat kebenaran / sokongan daripada agensi / Jabatan di atas. <br>
+
+      9. Kemukakan dokumen berikut untuk kelulusan Jabatan Akauntan Negara Malaysia (JANM):</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <!-- Card body -->
+    <div class="card-body">
+      <form style="padding: 20px 20px 20px 30px;">
+
+        <div class="form-group">
+          <label class="form-control-label">
+            1. Surat Permohonan
+          </label>
+          <div class="col-xl-6">
+            <div class="dropzone dropzone-single mb-3" id="dropzone-single">
+              <div class="fallback">
+                <div class="custom-file">
+                  <input class="custom-file-input" id="projectCoverUploads" type="file"
+                    (change)="onFileSelected($event, '0')" />
+
+                  <label class="custom-file-label" for="projectCoverUploads">
+                    Choose file
+                  </label>
+                </div>
+              </div>
+            </div>
+            {{filename[0]}}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label">
+            2. Senarai rekod kewangan dan perakaunan yang hendak dimusnahkan (Borang Arkib 4/2008 - Borang Permohonan
+            Bagi
+            Pemusnahan Rekod Kewangan dan Perakaunan).
+          </label>
+          <div class="col-xl-6">
+            <div class="dropzone dropzone-single mb-3" id="dropzone-single">
+              <div class="fallback">
+                <div class="custom-file">
+                  <input class="custom-file-input" id="projectCoverUploads" type="file"
+                    (change)="onFileSelected($event, '1')" />
+
+                  <label class="custom-file-label" for="projectCoverUploads">
+                    Choose file
+                  </label>
+                </div>
+              </div>
+            </div>
+            {{filename[1]}}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label">
+            3. Surat kebenaran / sokongan daripada Arkib Negara Malaysia (wajib).
+          </label>
+          <div class="col-xl-6">
+            <div class="dropzone dropzone-single mb-3" id="dropzone-single">
+              <div class="fallback">
+                <div class="custom-file">
+                  <input class="custom-file-input" id="projectCoverUploads" type="file"
+                    (change)="onFileSelected($event, '2')" />
+
+                  <label class="custom-file-label" for="projectCoverUploads">
+                    Choose file
+                  </label>
+                </div>
+              </div>
+            </div>
+            {{filename[2]}}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label">
+            4. Surat kebenaran / sokongan daripada Jabatan Audit Negara (wajib).
+          </label>
+          <div class="col-xl-6">
+            <div class="dropzone dropzone-single mb-3" id="dropzone-single">
+              <div class="fallback">
+                <div class="custom-file">
+                  <input class="custom-file-input" id="projectCoverUploads" type="file"
+                    (change)="onFileSelected($event, '3')" />
+
+                  <label class="custom-file-label" for="projectCoverUploads">
+                    Choose file
+                  </label>
+                </div>
+              </div>
+            </div>
+            {{filename[3]}}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label">
+            5. Surat kebenaran / sokongan SPRM dan Audit Dalam Kementerian (jika ada).
+          </label>
+          <div class="col-xl-6">
+            <div class="dropzone dropzone-single mb-3" id="dropzone-single">
+              <div class="fallback">
+                <div class="custom-file">
+                  <input class="custom-file-input" id="projectCoverUploads" type="file"
+                    (change)="onFileSelected($event, '4')" />
+
+                  <label class="custom-file-label" for="projectCoverUploads">
+                    Choose file
+                  </label>
+                </div>
+              </div>
+            </div>
+            {{filename[4]}}
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row mt-6">
+          <div class="col-md-12 clearfix">
+            <button class="btn btn-primary float-right" type="button" (click)="confirm()">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+<div class="header container-header">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">{{"Pengurusan " + managementType}}</h6>
+
+          <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class=" breadcrumb-item">
+                <a href="javascript:void(0)"> <i class="fas fa-file text-white"> </i> </a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)" class="text-white"> {{"Laporan "  + managementType}}</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--8">
+
+  <div class="card mb-4">
+    <div class="card-header bg-secondary">
+      <h3 class="mb-0"><i class="fas fa-search" aria-hidden="true"></i>&nbsp;Search</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+              <label class="form-control-label">Pilih Jenis Laporan</label>
+              <select class="form-control" [(ngModel)]="managementType" [ngModelOptions]="{standalone: true}">
+                <option value="Pengauditan">Pengauditan</option>
+                <option value="Naziran">Naziran</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="form-control-label">Carian ID</label>
+            <input type="text" class="form-control" id="ID" placeholder="Carian ID">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header bg-secondary">
+      <div class="row align-items-center">
+        <div class="col">
+          <h6 class="text-muted text-uppercase ls-1 mb-1">Chart</h6>
+
+          <h5 class="h3 mb-0">Laporan {{managementType}}</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="container">
+        <div class="chart">
+          <div class="amchart" id="chartdiv"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-2">
+    <!-- Card body -->
+    <div class="row">
+      <div class="col-xl-12">
+        <div class=" table-responsive mt-0">
+          <table class=" table align-items-center table-flush">
+            <thead class=" thead-light">
+              <tr>
+                <th class=" sort" scope="col"><b>ID</b></th>
+
+                <th class=" sort" scope="col"><b>Nama Laporan</b></th>
+
+                <th class="sort" scope="col">Tarikh</th>
+
+                <th class="sort" scope="col">Status</th>
+
+                <th scope="col">Action</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of rows">
+                <td scope="row">{{row.id}}</td>
+                <td scope="row">{{row.name}}</td>
+                <td>{{row.date}}</td>
+                <td>{{row.status}}</td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-neutral"><i class="fa fa-download"
+                      aria-hidden="true"></i>&nbsp;Download Laporan</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

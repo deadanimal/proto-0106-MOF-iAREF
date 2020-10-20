@@ -1,0 +1,63 @@
+<div class="header container-header">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">Kamus Rujukan</h6>
+
+          <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class=" breadcrumb-item">
+                <a href="javascript:void(0)"> <i class="fas fa-info-circle text-white"> </i> </a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class=" container-fluid mt--8">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2 class="h2 text-white bold">Kamus Rujukan</h2>
+      <p class="text-white">Carian butiran terperinci dan dokumen/rujukan di sini</p>
+    </div>
+  </div>
+
+    <div class="row align-items-center">
+      <div class="col-md-12">
+        <div class="card center-block" style="width: 70%;">
+          <div class="card-body">
+            <div class="row">
+              <div class="col text-center">
+                <span class="h3 bold text-dark " *ngFor="let row of rows"><a
+                    href="javascript:void(0)">{{row}}</a>&nbsp;&nbsp;</span>
+              </div>
+            </div>
+            <div class="row mt-4 align-items-center">
+              <div class="col-md-12 col-xs-3" style="padding: 0px 200px 0px 200px !important ;">
+                <div class="input-group input-group-alternative input-group-merge input-search">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-search text-dark"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Search" type="text" />
+                </div>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col text-center">
+                <p>Carian biasa: &nbsp;&nbsp;
+                  <a class="a-text" href="javascript:void(0)"><u>Surat arahan</u></a>
+                  &nbsp;&nbsp;&nbsp;
+                  <a class="a-text" href="javascript:void(0)"><u>Statistik
+                      pengaudit </u></a>
+                  &nbsp;&nbsp;&nbsp;
+                  <a class="a-text" href="javascript:void(0)"><u>Soalan lazim</u></a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

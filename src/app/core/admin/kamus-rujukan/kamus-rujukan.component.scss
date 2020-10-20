@@ -1,0 +1,30 @@
+.container-header{
+    background: rgb(62,41,79);
+    background: linear-gradient(90deg, rgba(62,41,79,1) 13%, rgba(44,70,92,1) 100%, rgba(22,98,131,0.9598214285714286) 100%);
+    height: 250px;
+}
+
+.center-block {
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+ }
+
+a{
+    color: black !important;
+}
+
+a:hover{
+    color: purple !important;
+}
+
+.a-text{
+    color: purple !important;
+}
+
+// .content-background{
+//     background-image:url("/assets/img/theme/theme6.jpg");
+//     width: 100% !important;
+//     height: 100% !important;
+
+// }

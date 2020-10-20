@@ -1,0 +1,287 @@
+<div class="header container-header">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">{{"Pengurusan " + managementType}}</h6>
+
+          <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class=" breadcrumb-item">
+                <a href="javascript:void(0)"> <i class="fas fa-file text-white"> </i> </a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)" class="text-white"> {{"Maklum Balas " + managementType}}</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container-fluid mt--8">
+
+  <div *ngIf="main" class="card">
+    <!-- Card body -->
+    <div class="card-body">
+      <form style="padding: 20px 20px 20px 30px;">
+
+        <div class="form-group">
+          <div class="col-6">
+            <label class="form-control-label">Pilih Maklum Balas</label>
+            <select class="form-control" [(ngModel)]="managementType" [ngModelOptions]="{standalone: true}">
+              <option value="Pengauditan">Pengauditan</option>
+              <option value="Naziran">Naziran</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="form-control-label">ID pengguna</label>
+              <input type="text" class="form-control" placeholder="Masukkan ID anda">
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row mt-6">
+          <div class="col-md-12 clearfix">
+            <button class="btn btn-primary float-right" type="button" (click)="showTable()">
+              Next
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="table" class="card mt--2">
+    <div class="row container-fluid ">
+      <div class="col-xl-12 text-left pl-0 mt-4 mb-2">
+        <a class="btn  btn-primary text-white" (click)="showForm()">
+          <i class="fas fa-plus text-black" aria-hidden="true"></i>&nbsp; Add New Record
+        </a>
+      </div>
+    </div>
+    <!-- Card body -->
+    <div class="row">
+      <div class="col-xl-12">
+        <div class=" table-responsive mt-2">
+          <table class=" table align-items-center table-flush">
+            <thead class=" thead-light">
+              <tr>
+                <th class=" sort" scope="col"><b>ID</b></th>
+  
+                <th class=" sort" scope="col"><b>Isu</b></th>
+  
+                <th class=" sort" scope="col"><b>Pengelasan</b></th>
+  
+                <th class=" sort" scope="col"><b>Penghantaran Notifikasi</b></th>
+  
+                <th class=" sort" scope="col"><b>Pemarkahan</b></th>
+  
+                <th class=" sort" scope="col"><b>Rating</b></th>
+
+                <th></th>
+  
+                <th scope="col">Action</th>
+  
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of rows">
+                <td scope="row">{{row.id}}</td>
+                <td>{{row.isu}}</td>
+                <td>{{row.pengelasan}}</td>
+                <td>{{row.notifikasi}}</td>
+                <td>{{row.markah}}</td>
+                <td>{{row.rating}}</td>
+                <td>
+                  <div class=" custom-control custom-checkbox mb-3">
+                    <input class=" custom-control-input" id="copy" type="checkbox" />
+                    <label class=" custom-control-label" for="copy">
+                      Copy
+                    </label>
+                  </div>
+                </td>
+                <td><a href="javascript:void(0)">
+                    <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                  </a>&nbsp;&nbsp;
+                  <a href="javascript:void(0)">
+                    <span><i class="fa fa-trash text-red" aria-hidden="true"></i></span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+  <div *ngIf="form" class="card">
+    <!-- Card header -->
+    <div class="card-header">
+      <h3 class="mb-0">Terhad/Sulit/Umum</h3>
+    </div>
+    <!-- Card body -->
+    <div class="card-body">
+      <form [formGroup]="form2" style="padding: 20px 20px 20px 30px;">
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-4">
+              <label class="form-control-label">1. Isu</label>
+            </div>
+            <div class="col-6">
+              <div class="row" style="padding-left: 50px !important;">
+                <div class="col-4">
+                  <div class=" custom-control custom-radio mb-3">
+                    <input class=" custom-control-input" id="customRadio1" name="custom-radio-1" type="radio" />
+
+                    <label class=" custom-control-label" for="customRadio1">
+                      Berisiko tinggi
+                    </label>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class=" custom-control custom-radio mb-3">
+                    <input class=" custom-control-input" id="customRadio2" name="custom-radio-1" type="radio" />
+
+                    <label class=" custom-control-label" for="customRadio2">
+                      Isu berulang
+                    </label>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class=" custom-control custom-radio mb-3">
+                    <input class=" custom-control-input" id="customRadio3" name="custom-radio-1" type="radio" />
+
+                    <label class=" custom-control-label" for="customRadio3">
+                      Lain-lain
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-4">
+              <label class="form-control-label">2. Pengelasan</label>
+            </div>
+            <div class="col-6">
+              <div class="row" style="padding-left: 50px !important;">
+                <div class="col-4">
+                  <div class=" custom-control custom-radio mb-3">
+                    <input class=" custom-control-input" id="customRadio4" name="custom-radio-2" type="radio" />
+
+                    <label class=" custom-control-label" for="customRadio4">
+                      Tiada tindakan
+                    </label>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class=" custom-control custom-radio mb-3">
+                    <input class=" custom-control-input" id="customRadio5" name="custom-radio-2" type="radio" />
+
+                    <label class=" custom-control-label" for="customRadio5">
+                      Dalam tindakan
+                    </label>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class=" custom-control custom-radio mb-3">
+                    <input class=" custom-control-input" id="customRadio6" name="custom-radio-2" type="radio" />
+
+                    <label class=" custom-control-label" for="customRadio6">
+                      Selesai
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-4">
+              <label class="form-control-label">3. Penghantaran notifikasi</label>
+            </div>
+            <div class="col-6">
+              <div class="row" style="padding-left: 50px !important;">
+                <div class="col-4">
+                  <div class=" custom-control custom-radio mb-3">
+                    <input class=" custom-control-input" id="customRadio7" name="custom-radio-3" type="radio" />
+
+                    <label class=" custom-control-label" for="customRadio7">
+                      Bulanan
+                    </label>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class=" custom-control custom-radio mb-3">
+                    <input class=" custom-control-input" id="customRadio8" name="custom-radio-3" type="radio" />
+
+                    <label class=" custom-control-label" for="customRadio8">
+                      Sukuan
+                    </label>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class=" custom-control custom-radio mb-3">
+                    <input class=" custom-control-input" id="customRadio9" name="custom-radio-3" type="radio" />
+
+                    <label class=" custom-control-label" for="customRadio9">
+                      Lain-lain
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=" form-group">
+          <div class="col-6 pl-0">
+            <label class="form-control-label">4. Pemarkahan (%)</label>
+            <input type="text" class="form-control" placeholder="masukkan markah">
+          </div>
+        </div>
+
+        <div class=" form-group">
+          <div class="col-6 pl-0">
+            <label class="form-control-label">5. Rating: {{form2.value.rating1}}</label>
+            <div class="cont clearfix">
+              <div class="stars float-left">
+                <ngx-star-rating formControlName="rating1" [id]="'rating'"></ngx-star-rating>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row mt-6">
+          <div class="col-md-12 clearfix">
+            <button class="btn btn-success float-right" type="button" (click)="confirm()">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

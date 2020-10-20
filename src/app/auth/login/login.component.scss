@@ -1,0 +1,87 @@
+
+
+.logo-box {
+  text-align: center;
+  margin-bottom: 2rem;
+  .logo {
+    max-height: 9rem;
+  }
+}
+
+.left-background {
+  background-image: url("../../../assets/img/theme/wallpaper3.jpg"), linear-gradient(rgba(43, 46, 48, 0.3),rgba(31, 29, 29, 0.3));
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  background-blend-mode: overlay;
+
+}
+
+.right-background {
+  background-color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  background-blend-mode: overlay;
+
+}
+
+.forget-label {
+  font-size: 0.875rem;
+  cursor: pointer;
+  span {
+    position: relative;
+    top: 2px;
+  }
+  align-content: center;
+}
+
+
+.custom-control-label {
+  vertical-align: none !important;
+}
+
+.error-message {
+  color: #f5365c;
+  text-align: right;
+  font-size: 0.8em;
+  padding-top: 5px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+
+.card{
+  background-color: transparent !important;
+  box-shadow: 0 4px 8px 0 white;
+}
+
+.btn {
+  flex: 1 1 auto;
+  text-transform: uppercase;
+  transition: 0.5s;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 10px;
+  background-color: #2B7C85;
+  border-left:none !important
+ }
+
+ .sign-up{
+   bottom:0 !important;
+   position: absolute !important;
+   text-align: center !important;
+ }
+
+
+
+
+  
+ 
